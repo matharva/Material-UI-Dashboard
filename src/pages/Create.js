@@ -88,7 +88,7 @@ const Create = () => {
         <TextField
           variant="outlined"
           className={classes.field}
-          label="details"
+          label="Details"
           required
           rows="4"
           multiline

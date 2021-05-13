@@ -8,6 +8,10 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { useHistory, useLocation } from "react-router";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import { format } from "date-fns";
+import Avatar from "@material-ui/core/Avatar";
 
 const drawerWidth = 240;
 
@@ -24,23 +28,44 @@ const menuItems = [
   },
 ];
 
-const useStyles = makeStyles({
-  page: {
-    backgroundColor: "#f9f9f9",
-    width: "100%",
-  },
-  drawer: {
-    width: drawerWidth,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  root: {
-    display: "flex",
-  },
-  active: {
-    backgroundColor: "#f4f4f4",
-  },
+// TO make use of the default theme values,
+// we have converted makeStyles into a function
+// which returns the object with the added values
+
+const useStyles = makeStyles((theme) => {
+  return {
+    page: {
+      backgroundColor: "#f9f9f9",
+      width: "100%",
+      padding: theme.spacing(3),
+    },
+    drawer: {
+      width: drawerWidth,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
+    root: {
+      display: "flex",
+    },
+    active: {
+      backgroundColor: "#f4f4f4",
+    },
+    title: {
+      padding: theme.spacing(2),
+    },
+    appBar: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+    },
+    toolbar: theme.mixins.toolbar,
+    date: {
+      flexGrow: 1,
+    },
+    avatar: {
+      marginLeft: theme.spacing(2),
+    },
+  };
 });
 
 const Layout = ({ children }) => {
@@ -50,6 +75,20 @@ const Layout = ({ children }) => {
   return (
     <div className={classes.root}>
       {/* App bar */}
+      <AppBar
+        elevation={0}
+        className={classes.appBar}
+        position="fixed"
+        color="primary"
+      >
+        <Toolbar>
+          <Typography className={classes.date}>
+            Today is {format(new Date(), "do MMMM Y")}
+          </Typography>
+          <Typography>Mario</Typography>
+          <Avatar src="/mario-av.png" className={classes.avatar}></Avatar>
+        </Toolbar>
+      </AppBar>
 
       {/* Side Drawer */}
       <Drawer
@@ -58,7 +97,9 @@ const Layout = ({ children }) => {
         anchor="left"
         classes={{ paper: classes.drawerPaper }}
       >
-        <Typography variant="h5">Ninja Notes</Typography>
+        <Typography variant="h5" className={classes.title}>
+          Ninja Notes
+        </Typography>
 
         <List>
           {menuItems.map((item) => (
@@ -75,7 +116,10 @@ const Layout = ({ children }) => {
         </List>
       </Drawer>
 
-      <div className={classes.page}>{children}</div>
+      <div className={classes.page}>
+        <div className={classes.toolbar}></div>
+        {children}
+      </div>
     </div>
   );
 };

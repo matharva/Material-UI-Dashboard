@@ -17,6 +17,24 @@
       "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "category": "todos",
       "id": 3
+    },
+    {
+      "title": "New Note for Money",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "category": "money",
+      "id": 4
+    },
+    {
+      "title": "Another Note",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. Adipiscing diam donec adipiscing tristique risus. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Sed felis eget velit aliquet sagittis id consectetur purus ut. Congue eu consequat ac felis donec et odio pellentesque diam. Tortor posuere ac ut consequat semper viverra nam libero. Augue ut lectus arcu bibendum at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non. Sollicitudin nibh sit amet commodo nulla.\n\nAmet massa vitae tortor condimentum lacinia quis vel eros donec. Diam maecenas sed enim ut sem viverra aliquet eget. Sit amet nisl suscipit adipiscing bibendum. Ut lectus arcu bibendum at varius. Sapien et ligula ullamcorper malesuada proin libero nunc. Ut pharetra sit amet aliquam id diam. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque. A scelerisque purus semper eget duis at tellus. Gravida cum sociis natoque penatibus. Tellus mauris a diam maecenas. Augue mauris augue neque gravida in fermentum et sollicitudin ac. Placerat duis ultricies lacus sed turpis.",
+      "category": "todos",
+      "id": 5
+    },
+    {
+      "title": "Final Note",
+      "details": "Some details",
+      "category": "money",
+      "id": 6
     }
   ]
 }
