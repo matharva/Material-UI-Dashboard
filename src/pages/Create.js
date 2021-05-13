@@ -33,31 +33,31 @@ const useStyles = makeStyles({
 const Create = () => {
   const classes = useStyles();
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [details, setDetails] = useState("");
   const [titleError, setTitleError] = useState(false);
-  const [descriptionError, setDescriptionError] = useState(false);
+  const [detailsError, setDetailsError] = useState(false);
   const [category, setCategory] = useState("todos");
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setTitleError(false);
-    setDescriptionError(false);
+    setDetailsError(false);
     console.log("Watashi ga kita");
 
     if (title == "") {
       setTitleError(true);
     }
-    if (description == "") {
-      setDescriptionError(true);
+    if (details == "") {
+      setDetailsError(true);
     }
 
-    if (title && description) {
-      console.log(title, description, category);
+    if (title && details) {
+      console.log(title, details, category);
       fetch("http://localhost:8000/notes", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ title, description, category }),
+        body: JSON.stringify({ title, details, category }),
       }).then(() => history.push("/"));
     }
   };
@@ -88,14 +88,14 @@ const Create = () => {
         <TextField
           variant="outlined"
           className={classes.field}
-          label="Description"
+          label="details"
           required
           rows="4"
           multiline
           color="secondary"
           fullWidth
-          onChange={(e) => setDescription(e.target.value)}
-          error={descriptionError}
+          onChange={(e) => setDetails(e.target.value)}
+          error={detailsError}
         />
         <FormControl className={classes.field}>
           <FormLabel> Notes Category</FormLabel>
